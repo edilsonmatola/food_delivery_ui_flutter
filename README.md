@@ -1,2 +1,16 @@
-# food_delivery_ui_flutter
-A simple flutter app  from Udemy coiurse to search for a restaurant and see they menu and prices.
+# flutter_food_delivery_ui
+
+A new Flutter project from a Udemy flutter course.
+
+## Getting Started
+
+This project is a starting point for a Flutter application.
+
+A few resources to get you started if this is your first Flutter project:
+
+- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+
+For help getting started with Flutter, view our
+[online documentation](https://flutter.dev/docs), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
