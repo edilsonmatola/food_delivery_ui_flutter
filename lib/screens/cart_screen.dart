@@ -24,7 +24,7 @@ class _CartScreenState extends State<CartScreen> {
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage(
-                        order.food.imageUrl,
+                        order.food!.imageUrl!,
                       ),
                       fit: BoxFit.cover,
                     ),
@@ -39,7 +39,7 @@ class _CartScreenState extends State<CartScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          order.food.name,
+                          order.food!.name!,
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
@@ -50,7 +50,7 @@ class _CartScreenState extends State<CartScreen> {
                           height: 10,
                         ),
                         Text(
-                          order.restaurant.name,
+                          order.restaurant!.name!,
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w600,
@@ -118,7 +118,7 @@ class _CartScreenState extends State<CartScreen> {
           Container(
             margin: EdgeInsets.all(10),
             child: Text(
-              '\$${order.quantity * order.food.price}',
+              '\$${order.quantity! * order.food!.price!}',
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w600,
@@ -133,22 +133,22 @@ class _CartScreenState extends State<CartScreen> {
   @override
   Widget build(BuildContext context) {
     var totalPrice = 0;
-    for (final order in currentUser.cart) {
-      totalPrice += order.quantity * order.food.price as int;
+    for (final order in currentUser.cart!) {
+      totalPrice += order.quantity! * order.food!.price! as int;
     }
 
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Cart (${currentUser.cart.length})',
+          'Cart (${currentUser.cart!.length})',
         ),
         centerTitle: true,
       ),
       body: ListView.separated(
         physics: BouncingScrollPhysics(),
         itemBuilder: (BuildContext context, int index) {
-          if (index < currentUser.cart.length) {
-            final order = currentUser.cart[index];
+          if (index < currentUser.cart!.length) {
+            final order = currentUser.cart![index];
             return _buildCartItem(order);
           }
           return Padding(
@@ -208,7 +208,7 @@ class _CartScreenState extends State<CartScreen> {
             color: Colors.grey,
           );
         },
-        itemCount: currentUser.cart.length + 1,
+        itemCount: currentUser.cart!.length + 1,
       ),
       bottomSheet: Container(
         height: 90,

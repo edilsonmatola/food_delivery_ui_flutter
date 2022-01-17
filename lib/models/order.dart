@@ -9,8 +9,8 @@ class Order {
     this.quantity,
   });
 
-  final Restaurant restaurant;
-  final Food food;
-  final String date;
-  final int quantity;
+  final Restaurant? restaurant;
+  final Food? food;
+  final String? date;
+  final int? quantity;
 }

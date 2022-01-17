@@ -31,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
               color: Colors.white,
               borderRadius: BorderRadius.circular(15),
               border: Border.all(
-                color: Colors.grey[200],
+                color: Colors.grey[200]!,
               ),
             ),
             child: Row(
@@ -39,12 +39,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(15),
                   child: Hero(
-                    tag: restaurant.imageUrl,
+                    tag: restaurant.imageUrl!,
                     child: Image(
                       height: 150,
                       width: 150,
                       image: AssetImage(
-                        restaurant.imageUrl,
+                        restaurant.imageUrl!,
                       ),
                       fit: BoxFit.cover,
                     ),
@@ -57,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        restaurant.name,
+                        restaurant.name!,
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
@@ -71,7 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         height: 4,
                       ),
                       Text(
-                        restaurant.address,
+                        restaurant.address!,
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w600,
@@ -127,7 +127,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             child: Text(
-              'Cart (${currentUser.cart.length})',
+              'Cart (${currentUser.cart!.length})',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 20,

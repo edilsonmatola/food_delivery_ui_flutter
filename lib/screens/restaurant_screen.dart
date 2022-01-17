@@ -4,9 +4,9 @@ import '../models/restaurant.dart';
 import '../widgets/rating_stars.dart';
 
 class RestaurantScreen extends StatefulWidget {
-  const RestaurantScreen({Key key, this.restaurant}) : super(key: key);
+  const RestaurantScreen({Key? key, this.restaurant}) : super(key: key);
 
-  final Restaurant restaurant;
+  final Restaurant? restaurant;
 
   @override
   _RestaurantScreenState createState() => _RestaurantScreenState();
@@ -24,7 +24,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(
-                  menuItem.imageUrl,
+                  menuItem.imageUrl!,
                 ),
                 fit: BoxFit.cover,
               ),
@@ -54,7 +54,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
             child: Column(
               children: [
                 Text(
-                  menuItem.name,
+                  menuItem.name!,
                   style: TextStyle(
                     fontSize: 24,
                     color: Colors.white,
@@ -105,10 +105,10 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
           Stack(
             children: [
               Hero(
-                tag: widget.restaurant.imageUrl,
+                tag: widget.restaurant!.imageUrl!,
                 child: Image(
                   image: AssetImage(
-                    widget.restaurant.imageUrl,
+                    widget.restaurant!.imageUrl!,
                   ),
                   height: 220,
                   width: MediaQuery.of(context).size.width,
@@ -150,7 +150,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      widget.restaurant.name,
+                      widget.restaurant!.name!,
                       style: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.w600,
@@ -164,12 +164,12 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                     )
                   ],
                 ),
-                RatingStars(rating: widget.restaurant.rating),
+                RatingStars(rating: widget.restaurant!.rating),
                 SizedBox(
                   height: 6,
                 ),
                 Text(
-                  widget.restaurant.address,
+                  widget.restaurant!.address!,
                   style: TextStyle(
                     fontSize: 18,
                   ),
@@ -237,8 +237,8 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
               physics: BouncingScrollPhysics(),
               padding: EdgeInsets.all(10),
               crossAxisCount: 2,
-              children: List.generate(widget.restaurant.menu.length, (index) {
-                final food = widget.restaurant.menu[index];
+              children: List.generate(widget.restaurant!.menu!.length, (index) {
+                final food = widget.restaurant!.menu![index];
                 return _buildMenuItem(food);
               }),
             ),
