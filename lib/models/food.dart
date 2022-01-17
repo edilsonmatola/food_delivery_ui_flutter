@@ -5,7 +5,7 @@ class Food {
     this.price,
   });
 
-  final String imageUrl;
-  final String name;
-  final double price;
+  final String? imageUrl;
+  final String? name;
+  final double? price;
 }

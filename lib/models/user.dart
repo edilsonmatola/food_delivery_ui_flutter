@@ -7,7 +7,7 @@ class User {
     this.cart,
   });
 
-  final String name;
-  final List<Order> orders;
-  final List<Order> cart;
+  final String? name;
+  final List<Order>? orders;
+  final List<Order>? cart;
 }

@@ -9,9 +9,9 @@ class Restaurant {
     this.menu,
   });
 
-  final String imageUrl;
-  final String name;
-  final String address;
-  final int rating;
-  final List<Food> menu;
+  final String? imageUrl;
+  final String? name;
+  final String? address;
+  final int? rating;
+  final List<Food>? menu;
 }

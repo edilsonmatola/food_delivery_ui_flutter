@@ -13,7 +13,7 @@ class RecentOrders extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.circular(15),
         border: Border.all(
-          color: Colors.grey[200],
+          color: Colors.grey[200]!,
         ),
       ),
       child: Row(
@@ -28,7 +28,7 @@ class RecentOrders extends StatelessWidget {
                     height: 100,
                     width: 100,
                     image: AssetImage(
-                      order.food.imageUrl,
+                      order.food!.imageUrl!,
                     ),
                     fit: BoxFit.cover,
                   ),
@@ -41,7 +41,7 @@ class RecentOrders extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          order.food.name,
+                          order.food!.name!,
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
@@ -52,7 +52,7 @@ class RecentOrders extends StatelessWidget {
                           height: 4,
                         ),
                         Text(
-                          order.restaurant.name,
+                          order.restaurant!.name!,
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w600,
@@ -63,7 +63,7 @@ class RecentOrders extends StatelessWidget {
                           height: 4,
                         ),
                         Text(
-                          order.date,
+                          order.date!,
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w600,
@@ -120,9 +120,9 @@ class RecentOrders extends StatelessWidget {
             physics: BouncingScrollPhysics(),
             padding: EdgeInsets.only(left: 10),
             scrollDirection: Axis.horizontal,
-            itemCount: currentUser.orders.length,
+            itemCount: currentUser.orders!.length,
             itemBuilder: (BuildContext context, int index) {
-              final order = currentUser.orders[index];
+              final order = currentUser.orders![index];
               return _buildRecentOrder(context, order);
             },
           ),
