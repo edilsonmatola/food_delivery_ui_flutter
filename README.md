@@ -1,4 +1,4 @@
-# flutter_food_delivery_ui
+# Food Delivery User Interface (UI)
 
 A new Flutter project from a Udemy flutter course.
 
