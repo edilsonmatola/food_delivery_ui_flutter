@@ -1,92 +1,136 @@
-# Contributing
+# Requirements to contribute
 
-When contributing to this repository, please first discuss the change you wish to make via issue,
-email, or any other method with the owners of this repository before making a change. 
+- Basic knowledge of programming is mandatory.
+- The ability to use Git and GitHub.
+- Some knowledge of Dart and how to use Flutter is preferrable for a head start.
+- UI/UX Design skills are appreciable but not mandatory.
+- Some idea about Firebase or willingness to learn it.
 
-Please note we have a code of conduct, please follow it in all your interactions with the project.
+# General coding guidelines
 
-## Pull Request Process
+If you'd like to add a feature or fix a bug, we're more than happy to accept pull requests! We only ask a few things:
 
-1. Ensure any install or build dependencies are removed before the end of the layer when doing a 
-   build.
-2. Update the README.md with details of changes to the interface, this includes new environment 
-   variables, exposed ports, useful file locations and container parameters.
-3. Increase the version numbers in any examples files and the README.md to the new version that this
-   Pull Request would represent. The versioning scheme we use is [SemVer](http://semver.org/).
-4. You may merge the Pull Request in once you have the sign-off of two other developers, or if you 
-   do not have permission to do that, you may request the second reviewer to merge it for you.
+- Ensure your code contains no analyzer errors, e.g:
+  - Code is strong-mode compliant.
+  - Code is free of lint errors.
+- Format your code with `Dart-Code.dart-code`.
+- Write helpful documentation.
+- If you would like to make a bigger / fundamental change to the codebase, please file a lightweight example PR / issue.
 
-## Code of Conduct
+# 💥 How to Contribute
 
-### Our Pledge
+- Take a look at the existing [Issues](https://github.com/edilsonmatola/food_delivery_ui_flutter/issues) or [create a new issue](https://github.com/edilsonmatola/POO-Java/issues/new/choose)!
+- [Fork the Repo](https://github.com/edilsonmatola/food_delivery_ui_flutter/fork). Then, create a branch for any issue that you are working on. Finally, commit your work.
+- Create a **[Pull Request](https://github.com/edilsonmatola/food_delivery_ui_flutter/compare)** (_PR_), which will be promptly reviewed and given suggestions for improvements by the community.
+- Add screenshots or screen captures to your Pull Request to help us understand the effects of the changes proposed in your PR.
 
-In the interest of fostering an open and welcoming environment, we as
-contributors and maintainers pledge to making participation in our project and
-our community a harassment-free experience for everyone, regardless of age, body
-size, disability, ethnicity, gender identity and expression, level of experience,
-nationality, personal appearance, race, religion, or sexual identity and
-orientation.
+## ⭐ HOW TO MAKE A PULL REQUEST:
 
-### Our Standards
+**1.** Start by making a fork the [**food_delivery_ui_flutter**](https://github.com/edilsonmatola/food_delivery_ui_flutter) repository. Click on the <a href="https://github.com/edilsonmatola/food_delivery_ui_flutter/fork"><img src="https://i.imgur.com/G4z1kEe.png" height="21" width="21"></a> symbol at the top right corner.
 
-Examples of behavior that contributes to creating a positive environment
-include:
+**2.** Clone your new fork of the repository:
 
-* Using welcoming and inclusive language
-* Being respectful of differing viewpoints and experiences
-* Gracefully accepting constructive criticism
-* Focusing on what is best for the community
-* Showing empathy towards other community members
+```bash
+git clone https://github.com/<your-github-username>/food_delivery_ui_flutter
+```
 
-Examples of unacceptable behavior by participants include:
+**3.** Navigate to the new project directory:
 
-* The use of sexualized language or imagery and unwelcome sexual attention or
-advances
-* Trolling, insulting/derogatory comments, and personal or political attacks
-* Public or private harassment
-* Publishing others' private information, such as a physical or electronic
-  address, without explicit permission
-* Other conduct which could reasonably be considered inappropriate in a
-  professional setting
+```bash
+cd food_delivery_ui_flutter
+```
 
-### Our Responsibilities
+**4.** Set upstream command:
 
-Project maintainers are responsible for clarifying the standards of acceptable
-behavior and are expected to take appropriate and fair corrective action in
-response to any instances of unacceptable behavior.
+```bash
+git remote add upstream https://github.com/edilsonmatola/food_delivery_ui_flutter.git
+```
 
-Project maintainers have the right and responsibility to remove, edit, or
-reject comments, commits, code, wiki edits, issues, and other contributions
-that are not aligned to this Code of Conduct, or to ban temporarily or
-permanently any contributor for other behaviors that they deem inappropriate,
-threatening, offensive, or harmful.
+**5.** Checkout from main to **develop** branch.
 
-### Scope
+```terminal
+git checkout develop
+```
 
-This Code of Conduct applies both within project spaces and in public spaces
-when an individual is representing the project or its community. Examples of
-representing a project or community include using an official project e-mail
-address, posting via an official social media account, or acting as an appointed
-representative at an online or offline event. Representation of a project may be
-further defined and clarified by project maintainers.
+**6.** Create a feature branch from the **develop** branch!
 
-### Enforcement
+```bash
+git checkout -b YourBranchName
+```
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported by contacting the project team at edilsonmatola13@gmail.com. All
-complaints will be reviewed and investigated and will result in a response that
-is deemed necessary and appropriate to the circumstances. The project team is
-obligated to maintain confidentiality with regard to the reporter of an incident.
-Further details of specific enforcement policies may be posted separately.
+**7.** Sync your fork or your local repository with the origin repository:
 
-Project maintainers who do not follow or enforce the Code of Conduct in good
-faith may face temporary or permanent repercussions as determined by other
-members of the project's leadership.
+- In your forked repository, click on "Fetch upstream"
+- Click "Fetch and merge"
 
-### Attribution
+### Alternatively, Git CLI way to Sync forked repository with origin repository:
 
-This Code of Conduct is adapted from the [Contributor Covenant][homepage], version 1.4,
-available at [http://contributor-covenant.org/version/1/4][version]
+```bash
+git fetch upstream
+```
 
-[homepage]: http://contributor-covenant.org
-[version]: http://contributor-covenant.org/version/1/4/
+```bash
+git merge upstream/develop
+```
+
+### [Github Docs](https://docs.github.com/en/github/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github) for Syncing
+
+**8.** Make your changes to the source code.
+
+⚠️ **Update** both **Material and Cupertino** code if applicable.
+
+**9.** Stage your changes and commit:
+
+⚠️ **Make sure** not to run the commands `git add .` or `git add *`. Instead, stage your changes for each file/folder
+
+```bash
+git add <file-name>
+```
+
+```bash
+git commit -m "<your_commit_message>"
+```
+
+**10.** Push your local commits to the remote repository:
+
+```bash
+git push origin YourBranchName
+```
+
+**10.** Create a [Pull Request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request)!
+
+⚠️ **Make sure** to submit the Pull Request against the **develop** branch.
+
+## Contribution checklist
+
+When opening an issue or pull request, please use this template in your comment:
+
+- [ ] I have read the contribution guidelines at [CONTRIBUTING.md](CONTRIBUTING.md)
+- [ ] I have checked other issues/PRs to make sure this is not a duplicate
+- [ ] I agree that my contribution is subject to this project's [MIT License](LICENSE.md)
+
+**11.** **Congratulations!** You've made your first contribution to [**food_delivery_ui_flutter**](https://github.com/edilsonmatola/food_delivery_ui_flutter/graphs/contributors)! 🙌🏼
+
+# Style Guide for Git Commit Messages :memo:
+
+**How you can add more value to your contribution logs:**
+
+- Use the present tense. (Example: "Add feature" instead of "Added feature")
+- Use the imperative mood. (Example: "Move item to...", instead of "Moves item to...")
+- Limit the first line (also called the Subject Line) to _50 characters or less_.
+- Capitalize the Subject Line.
+- Separate subject from body with a blank line.
+- Do not end the subject line with a period.
+- Wrap the body at _72 characters_.
+- Use the body to explain the _what_, _why_, _vs_, and _how_.
+- Reference [Issues](https://github.com/edilsonmatola/food_delivery_ui_flutter/issues) and [Pull Requests](https://github.com/edilsonmatola/food_delivery_ui_flutter/pulls) liberally after the first line.
+
+## 💥 Issues
+
+In order to discuss changes, you are welcome to [open an issue](https://github.com/edilsonmatola/food_delivery_ui_flutter/issues/new/choose) about what you would like to contribute. Enhancements are always encouraged and appreciated.
+
+## All the best! 🥇
+
+Sit and relax, you've made your contribution!
+
+For help getting started with Flutter, view the online documentation, which offers tutorials, samples, guidance on mobile development, and a full API reference.
