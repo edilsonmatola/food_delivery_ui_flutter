@@ -3,7 +3,7 @@ import '../data/data.dart';
 import '../models/order.dart';
 
 class CartScreen extends StatefulWidget {
-  /*const CartScreen({Key? key}) : super(key: key);*/
+  const CartScreen({Key? key}) : super(key: key);
 
   @override
   _CartScreenState createState() => _CartScreenState();
@@ -132,9 +132,9 @@ class _CartScreenState extends State<CartScreen> {
 
   @override
   Widget build(BuildContext context) {
-    var totalPrice = 0;
+    num totalPrice = 0;
     for (final order in currentUser.cart!) {
-      totalPrice += order.quantity! * order.food!.price! as int;
+      totalPrice += order.quantity! * order.food!.price!;
     }
 
     return Scaffold(
