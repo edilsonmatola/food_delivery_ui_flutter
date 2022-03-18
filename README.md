@@ -1,16 +1,32 @@
 # Food Delivery User Interface (UI)
 
-A new Flutter project from a Udemy flutter course.
+A beautiful modern interface for a food delivery app.
 
-## Getting Started
+## Installation
 
-This project is a starting point for a Flutter application.
+##### 1. Clone the repository
 
-A few resources to get you started if this is your first Flutter project:
+```bash
+git clone https://github.com/edilsonmatola/food_delivery_ui_flutter.git
+```
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+##### 2. Move to the desired folder
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+cd food_delivery_ui_flutter
+```
+
+3. Create Firebase Project
+4. Enable Authentication
+5. Make Firestore Rules
+6. Create Android, iOS & Web Apps
+
+##### 7. To run the app, simply write the following commands:
+
+```bash
+flutter pub get
+# flutter emulators --launch "emulator_id" (to get Android Simulator)
+open -a simulator (to get iOS Simulator)
+flutter run
+flutter run -d chrome --web-renderer html (to see the best output)
+```
