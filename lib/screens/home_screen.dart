@@ -7,7 +7,7 @@ import 'cart_screen.dart';
 import 'restaurant_screen.dart';
 
 class HomeScreen extends StatefulWidget {
-  /* const HomeScreen({Key? key}) : super(key: key);*/
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -144,20 +144,10 @@ class _HomeScreenState extends State<HomeScreen> {
             child: TextField(
               decoration: InputDecoration(
                 contentPadding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
-                fillColor: Colors.white,
+                fillColor: Colors.grey[200],
                 filled: true,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(30),
-                  borderSide: BorderSide(width: 0.8),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(30),
-                  borderSide: BorderSide(
-                    width: 0.8,
-                    color: Theme.of(context).primaryColor,
-                  ),
-                ),
-                hintText: 'search food or restaurants',
+                border: InputBorder.none,
+                hintText: 'Search food or restaurants',
                 hintStyle: TextStyle(
                   fontSize: 22,
                 ),
