@@ -99,151 +99,154 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          Stack(
-            children: [
-              Hero(
-                tag: widget.restaurant!.imageUrl!,
-                child: Image(
-                  image: AssetImage(
-                    widget.restaurant!.imageUrl!,
-                  ),
-                  height: 220,
-                  width: MediaQuery.of(context).size.width,
-                  fit: BoxFit.cover,
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 50),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    IconButton(
-                      onPressed: () => Navigator.pop(context),
-                      icon: Icon(
-                        Icons.arrow_back,
-                      ),
-                      color: Colors.white,
-                      iconSize: 30,
-                    ),
-                    IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.favorite,
-                      ),
-                      color: Theme.of(context).primaryColor,
-                      iconSize: 35,
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-          Padding(
-            padding: EdgeInsets.all(20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+    return SafeArea(
+      child: Scaffold(
+        body: Column(
+          children: [
+            Stack(
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      widget.restaurant!.name!,
-                      style: TextStyle(
-                        fontSize: 22,
-                        fontWeight: FontWeight.w600,
-                      ),
+                Hero(
+                  tag: widget.restaurant!.imageUrl!,
+                  child: Image(
+                    image: AssetImage(
+                      widget.restaurant!.imageUrl!,
                     ),
-                    Text(
-                      '0.2 miles away',
-                      style: TextStyle(
-                        fontSize: 18,
+                    height: 220,
+                    width: MediaQuery.of(context).size.width,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 50),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      IconButton(
+                        onPressed: () => Navigator.pop(context),
+                        icon: Icon(
+                          Icons.arrow_back,
+                        ),
+                        color: Colors.white,
+                        iconSize: 30,
                       ),
-                    )
-                  ],
-                ),
-                RatingStars(rating: widget.restaurant!.rating),
-                SizedBox(
-                  height: 6,
-                ),
-                Text(
-                  widget.restaurant!.address!,
-                  style: TextStyle(
-                    fontSize: 18,
+                      IconButton(
+                        onPressed: () {},
+                        icon: Icon(
+                          Icons.favorite,
+                        ),
+                        color: Theme.of(context).primaryColor,
+                        iconSize: 35,
+                      ),
+                    ],
                   ),
                 ),
               ],
             ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  primary: Theme.of(context).primaryColor,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
+            Padding(
+              padding: EdgeInsets.all(20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        widget.restaurant!.name!,
+                        style: TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      Text(
+                        '0.2 miles away',
+                        style: TextStyle(
+                          fontSize: 18,
+                        ),
+                      )
+                    ],
                   ),
-                  padding: EdgeInsets.symmetric(horizontal: 30),
-                ),
-                child: Text(
-                  'Reviews',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
+                  RatingStars(rating: widget.restaurant!.rating),
+                  SizedBox(
+                    height: 6,
                   ),
-                ),
-              ),
-              ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  primary: Theme.of(context).primaryColor,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
+                  Text(
+                    widget.restaurant!.address!,
+                    style: TextStyle(
+                      fontSize: 18,
+                    ),
                   ),
-                  padding: EdgeInsets.symmetric(horizontal: 30),
-                ),
-                child: Text(
-                  'Contact',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                  ),
-                ),
-              ),
-            ],
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Center(
-            child: Text(
-              'Menu',
-              style: TextStyle(
-                fontSize: 22,
-                fontWeight: FontWeight.w600,
-                letterSpacing: 1.2,
+                ],
               ),
             ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Expanded(
-            child: GridView.count(
-              physics: BouncingScrollPhysics(),
-              padding: EdgeInsets.all(10),
-              crossAxisCount: 2,
-              children: List.generate(widget.restaurant!.menu!.length, (index) {
-                final food = widget.restaurant!.menu![index];
-                return _buildMenuItem(food);
-              }),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    primary: Theme.of(context).primaryColor,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    padding: EdgeInsets.symmetric(horizontal: 30),
+                  ),
+                  child: Text(
+                    'Reviews',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                    ),
+                  ),
+                ),
+                ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    primary: Theme.of(context).primaryColor,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    padding: EdgeInsets.symmetric(horizontal: 30),
+                  ),
+                  child: Text(
+                    'Contact',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                    ),
+                  ),
+                ),
+              ],
             ),
-          )
-        ],
+            SizedBox(
+              height: 10,
+            ),
+            Center(
+              child: Text(
+                'Menu',
+                style: TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.w600,
+                  letterSpacing: 1.2,
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Expanded(
+              child: GridView.count(
+                physics: BouncingScrollPhysics(),
+                padding: EdgeInsets.all(10),
+                crossAxisCount: 2,
+                children:
+                    List.generate(widget.restaurant!.menu!.length, (index) {
+                  final food = widget.restaurant!.menu![index];
+                  return _buildMenuItem(food);
+                }),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
