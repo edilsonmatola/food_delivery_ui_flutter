@@ -2,6 +2,10 @@
 
 A beautiful modern interface for a food delivery app.
 
+### Demo
+
+<img src="./media/demo-1.png" width="30%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./media/demo-2.png" width="30%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./media/demo-3.png" width="30%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./media/demo-app-preview.gif" width="30%">
+
 ## Installation
 
 ##### 1. Clone the repository
