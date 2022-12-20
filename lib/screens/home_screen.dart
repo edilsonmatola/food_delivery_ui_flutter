@@ -105,83 +105,85 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {},
-          icon: Icon(
-            Icons.account_circle,
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          leading: IconButton(
+            onPressed: () {},
+            icon: Icon(
+              Icons.account_circle,
+            ),
+            iconSize: 30,
           ),
-          iconSize: 30,
-        ),
-        title: Text(
-          'Food Delivery',
-        ),
-        centerTitle: true,
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (_) => CartScreen(),
+          title: Text(
+            'Food Delivery',
+          ),
+          centerTitle: true,
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => CartScreen(),
+                ),
+              ),
+              child: Text(
+                'Cart (${currentUser.cart!.length})',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                ),
               ),
             ),
-            child: Text(
-              'Cart (${currentUser.cart!.length})',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 20,
-              ),
-            ),
-          ),
-        ],
-      ),
-      body: ListView(
-        physics: BouncingScrollPhysics(),
-        children: [
-          Padding(
-            padding: EdgeInsets.all(20),
-            child: TextField(
-              decoration: InputDecoration(
-                contentPadding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
-                fillColor: Colors.grey[200],
-                filled: true,
-                border: InputBorder.none,
-                hintText: 'Search food or restaurants',
-                hintStyle: TextStyle(
-                  fontSize: 22,
-                ),
-                prefixIcon: Icon(
-                  Icons.search,
-                ),
-                suffix: IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.clear,
+          ],
+        ),
+        body: ListView(
+          physics: BouncingScrollPhysics(),
+          children: [
+            Padding(
+              padding: EdgeInsets.all(20),
+              child: TextField(
+                decoration: InputDecoration(
+                  contentPadding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
+                  fillColor: Colors.grey[200],
+                  filled: true,
+                  border: InputBorder.none,
+                  hintText: 'Search food or restaurants',
+                  hintStyle: TextStyle(
+                    fontSize: 22,
+                  ),
+                  prefixIcon: Icon(
+                    Icons.search,
+                  ),
+                  suffix: IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.clear,
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
-          RecentOrders(),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
-                child: Text(
-                  'Nearby Restaurants',
-                  style: TextStyle(
-                    fontSize: 21,
-                    fontWeight: FontWeight.w600,
-                    letterSpacing: 1.2,
+            RecentOrders(),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  child: Text(
+                    'Nearby Restaurants',
+                    style: TextStyle(
+                      fontSize: 21,
+                      fontWeight: FontWeight.w600,
+                      letterSpacing: 1.2,
+                    ),
                   ),
                 ),
-              ),
-              _buildRestaurants(),
-            ],
-          )
-        ],
+                _buildRestaurants(),
+              ],
+            )
+          ],
+        ),
       ),
     );
   }
