@@ -1,15 +1,22 @@
 import 'package:flutter/material.dart';
+
 import '../data/data.dart';
 import '../models/order.dart';
 
 class RecentOrders extends StatelessWidget {
-  /*const RecentOrders({Key? key}) : super(key: key);*/
+  const RecentOrders({Key? key}) : super(key: key);
 
   Container _buildRecentOrder(BuildContext context, Order order) {
     return Container(
       margin: EdgeInsets.all(10),
       width: 320,
       decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.shade200,
+            offset: Offset(0, 2),
+          ),
+        ],
         color: Colors.white,
         borderRadius: BorderRadius.circular(15),
         border: Border.all(
