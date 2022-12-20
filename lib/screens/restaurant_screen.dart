@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+
+import '../app/presentation/widgets/rating_stars.dart';
 import '../models/food.dart';
 import '../models/restaurant.dart';
-import '../widgets/rating_stars.dart';
 
 class RestaurantScreen extends StatefulWidget {
   const RestaurantScreen({Key? key, this.restaurant}) : super(key: key);
@@ -12,7 +13,7 @@ class RestaurantScreen extends StatefulWidget {
   _RestaurantScreenState createState() => _RestaurantScreenState();
 }
 
-class _RestaurantScreenState extends State<RestaurantScreen> {
+class _RestaurantScreenState extends State  <RestaurantScreen> {
   Center _buildMenuItem(Food menuItem) {
     return Center(
       child: Stack(
@@ -184,7 +185,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                 ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
-                    primary: Theme.of(context).primaryColor,
+                    backgroundColor: Theme.of(context).primaryColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
@@ -201,7 +202,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                 ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
-                    primary: Theme.of(context).primaryColor,
+                    backgroundColor: Theme.of(context).primaryColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
