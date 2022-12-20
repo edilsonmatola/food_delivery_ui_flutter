@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../data/data.dart';
 import '../models/order.dart';
 
@@ -227,7 +228,7 @@ class _CartScreenState extends State<CartScreen> {
           child: ElevatedButton(
             onPressed: () {},
             style: ElevatedButton.styleFrom(
-              primary: Theme.of(context).primaryColor,
+              backgroundColor: Theme.of(context).primaryColor,
             ),
             child: Text(
               'CHECKOUT',
