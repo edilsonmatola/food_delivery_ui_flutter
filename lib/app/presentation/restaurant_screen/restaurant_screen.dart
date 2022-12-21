@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../models/food_model.dart';
 import '../../../models/restaurant_model.dart';
-import '../widgets/rating_stars.dart';
+import 'widgets/rating_stars.dart';
 
 class RestaurantScreen extends StatefulWidget {
   const RestaurantScreen({Key? key, this.restaurant}) : super(key: key);
