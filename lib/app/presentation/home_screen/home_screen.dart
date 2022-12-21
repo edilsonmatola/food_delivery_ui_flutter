@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 import '../../data/data.dart';
-import '../widgets/rating_stars.dart';
-import 'widgets/recent_orders.dart';
 import '../cart_screen/cart_screen.dart';
 import '../restaurant_screen/restaurant_screen.dart';
+import '../widgets/rating_stars.dart';
+import 'widgets/recent_orders.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
