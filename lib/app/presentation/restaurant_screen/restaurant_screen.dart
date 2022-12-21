@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 
+import '../../../models/food_model.dart';
+import '../../../models/restaurant_model.dart';
 import '../widgets/rating_stars.dart';
-import '../../../models/food.dart';
-import '../../../models/restaurant.dart';
 
 class RestaurantScreen extends StatefulWidget {
   const RestaurantScreen({Key? key, this.restaurant}) : super(key: key);
 
-  final Restaurant? restaurant;
+  final RestaurantModel? restaurant;
 
   @override
   _RestaurantScreenState createState() => _RestaurantScreenState();
 }
 
-class _RestaurantScreenState extends State  <RestaurantScreen> {
-  Center _buildMenuItem(Food menuItem) {
+class _RestaurantScreenState extends State<RestaurantScreen> {
+  Center _buildMenuItem(FoodModel menuItem) {
     return Center(
       child: Stack(
         alignment: Alignment.center,
