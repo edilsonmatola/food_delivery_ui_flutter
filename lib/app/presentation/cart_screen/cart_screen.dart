@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../models/order_model.dart';
 import '../../data/data.dart';
-import '../../../models/order.dart';
 
 class CartScreen extends StatefulWidget {
   const CartScreen({Key? key}) : super(key: key);
@@ -11,7 +11,7 @@ class CartScreen extends StatefulWidget {
 }
 
 class _CartScreenState extends State<CartScreen> {
-  Container _buildCartItem(Order order) {
+  Container _buildCartItem(OrderModel order) {
     return Container(
       padding: EdgeInsets.all(20),
       height: 170,
