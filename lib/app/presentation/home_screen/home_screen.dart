@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../data/data.dart';
 import '../cart_screen/cart_screen.dart';
 import '../restaurant_screen/restaurant_screen.dart';
-import '../widgets/rating_stars.dart';
+import '../restaurant_screen/widgets/rating_stars.dart';
 import 'widgets/recent_orders.dart';
 
 class HomeScreen extends StatefulWidget {
