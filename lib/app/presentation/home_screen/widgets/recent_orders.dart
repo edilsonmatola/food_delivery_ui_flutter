@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
+import '../../../../models/order_model.dart';
 import '../../../data/data.dart';
-import '../../../../models/order.dart';
 
 class RecentOrders extends StatelessWidget {
   const RecentOrders({Key? key}) : super(key: key);
 
-  Container _buildRecentOrder(BuildContext context, Order order) {
+  Container _buildRecentOrder(BuildContext context, OrderModel order) {
     return Container(
       margin: EdgeInsets.all(10),
       width: 320,
@@ -70,7 +70,7 @@ class RecentOrders extends StatelessWidget {
                           height: 4,
                         ),
                         Text(
-                          order.date!,
+                          order.dateTime!,
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w600,
