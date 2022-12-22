@@ -6,7 +6,50 @@ import '../../../data/data.dart';
 class RecentOrders extends StatelessWidget {
   const RecentOrders({Key? key}) : super(key: key);
 
-  Container _buildRecentOrder(BuildContext context, OrderModel order) {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          child: Text(
+            'Recent Orders',
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.w600,
+              letterSpacing: 1.2,
+            ),
+          ),
+        ),
+        Container(
+          height: 120,
+          child: ListView.builder(
+            physics: BouncingScrollPhysics(),
+            padding: EdgeInsets.only(left: 10),
+            scrollDirection: Axis.horizontal,
+            itemCount: currentUser.orders!.length,
+            itemBuilder: (BuildContext context, int index) {
+              final order = currentUser.orders![index];
+              return _RecentOrderCard(order: order);
+            },
+          ),
+        )
+      ],
+    );
+  }
+}
+
+class _RecentOrderCard extends StatelessWidget {
+  const _RecentOrderCard({
+    Key? key,
+    required this.order,
+  }) : super(key: key);
+
+  final OrderModel order;
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(10),
       width: 320,
@@ -102,39 +145,6 @@ class RecentOrders extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20),
-          child: Text(
-            'Recent Orders',
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.w600,
-              letterSpacing: 1.2,
-            ),
-          ),
-        ),
-        Container(
-          height: 120,
-          child: ListView.builder(
-            physics: BouncingScrollPhysics(),
-            padding: EdgeInsets.only(left: 10),
-            scrollDirection: Axis.horizontal,
-            itemCount: currentUser.orders!.length,
-            itemBuilder: (BuildContext context, int index) {
-              final order = currentUser.orders![index];
-              return _buildRecentOrder(context, order);
-            },
-          ),
-        )
-      ],
     );
   }
 }
