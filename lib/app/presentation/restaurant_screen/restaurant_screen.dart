@@ -117,29 +117,38 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                     fit: BoxFit.cover,
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 50),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      IconButton(
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.black38,
+                        borderRadius: BorderRadius.circular(100),
+                      ),
+                      child: IconButton(
                         onPressed: () => Navigator.pop(context),
                         icon: Icon(
                           Icons.arrow_back,
                         ),
                         color: Colors.white,
-                        iconSize: 30,
+                        iconSize: 20,
                       ),
-                      IconButton(
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.black26,
+                        borderRadius: BorderRadius.circular(100),
+                      ),
+                      child: IconButton(
                         onPressed: () {},
                         icon: Icon(
                           Icons.favorite,
                         ),
-                        color: Theme.of(context).primaryColor,
-                        iconSize: 35,
+                        color: Colors.red,
+                        iconSize: 30,
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ],
             ),
