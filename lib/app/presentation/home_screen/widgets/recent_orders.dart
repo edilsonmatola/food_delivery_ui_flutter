@@ -56,8 +56,10 @@ class _RecentOrderCard extends StatelessWidget {
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.shade200,
-            offset: Offset(0, 2),
+            blurRadius: 1,
+            spreadRadius: 4,
+            color: Colors.grey.shade100,
+            // offset: Offset(0, 2),
           ),
         ],
         color: Colors.white,
@@ -99,7 +101,7 @@ class _RecentOrderCard extends StatelessWidget {
                           overflow: TextOverflow.ellipsis,
                         ),
                         SizedBox(
-                          height: 4,
+                          height: 8,
                         ),
                         Text(
                           order.restaurant!.name!,
