@@ -138,106 +138,116 @@ class _CartScreenState extends State<CartScreen> {
       totalPrice += order.quantity! * order.food!.price!;
     }
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Cart (${currentUser.cart!.length})',
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          iconTheme: Theme.of(context).iconTheme.copyWith(
+                color: Colors.black,
+              ),
+          elevation: 0,
+          backgroundColor: Colors.transparent,
+          title: Text(
+            'Cart',
+            style: TextStyle(
+              color: Colors.black,
+            ),
+          ),
+          centerTitle: true,
         ),
-        centerTitle: true,
-      ),
-      body: ListView.separated(
-        physics: BouncingScrollPhysics(),
-        itemBuilder: (BuildContext context, int index) {
-          if (index < currentUser.cart!.length) {
-            final order = currentUser.cart![index];
-            return _buildCartItem(order);
-          }
-          return Padding(
-            padding: EdgeInsets.all(20),
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Estimated Delivery Time',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w600,
+        body: ListView.separated(
+          physics: BouncingScrollPhysics(),
+          itemBuilder: (BuildContext context, int index) {
+            if (index < currentUser.cart!.length) {
+              final order = currentUser.cart![index];
+              return _buildCartItem(order);
+            }
+            return Padding(
+              padding: EdgeInsets.all(20),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Estimated Delivery Time',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
-                    ),
-                    Text(
-                      '25 min',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w600,
+                      Text(
+                        '25 min',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 10),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Total Cost',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w600,
+                    ],
+                  ),
+                  SizedBox(height: 10),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Total Cost',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
-                    ),
-                    Text(
-                      '\$${totalPrice.toStringAsFixed(2)}',
-                      style: TextStyle(
-                        color: Colors.green[700],
-                        fontSize: 20,
-                        fontWeight: FontWeight.w600,
+                      Text(
+                        '\$${totalPrice.toStringAsFixed(2)}',
+                        style: TextStyle(
+                          color: Colors.green[700],
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 80,
-                ),
-              ],
-            ),
-          );
-        },
-        separatorBuilder: (BuildContext context, int index) {
-          return Divider(
-            height: 1,
-            color: Colors.grey,
-          );
-        },
-        itemCount: currentUser.cart!.length + 1,
-      ),
-      bottomSheet: Container(
-        height: 90,
-        width: MediaQuery.of(context).size.width,
-        decoration: BoxDecoration(
-          color: Theme.of(context).primaryColor,
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black26,
-              offset: Offset(0, -1),
-              blurRadius: 6,
-            ),
-          ],
+                    ],
+                  ),
+                  SizedBox(
+                    height: 80,
+                  ),
+                ],
+              ),
+            );
+          },
+          separatorBuilder: (BuildContext context, int index) {
+            return Divider(
+              height: 1,
+              color: Colors.grey,
+            );
+          },
+          itemCount: currentUser.cart!.length + 1,
         ),
-        child: Center(
-          child: ElevatedButton(
-            onPressed: () {},
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Theme.of(context).primaryColor,
-            ),
-            child: Text(
-              'CHECKOUT',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
-                letterSpacing: 2,
+        bottomSheet: Container(
+          height: 90,
+          width: MediaQuery.of(context).size.width,
+          decoration: BoxDecoration(
+            color: Theme.of(context).primaryColor,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black26,
+                offset: Offset(0, -1),
+                blurRadius: 6,
+              ),
+            ],
+          ),
+          child: Center(
+            child: ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Theme.of(context).primaryColor,
+              ),
+              child: Text(
+                'CHECKOUT',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 2,
+                ),
               ),
             ),
           ),
