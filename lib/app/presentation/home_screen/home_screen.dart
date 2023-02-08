@@ -140,28 +140,29 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
         body: ListView(
+          padding: EdgeInsets.symmetric(vertical: 10),
           physics: BouncingScrollPhysics(),
           children: [
             Padding(
-              padding: EdgeInsets.all(20),
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: TextField(
                 decoration: InputDecoration(
-                  contentPadding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
+                  contentPadding: const EdgeInsets.all(8),
                   fillColor: Colors.grey[200],
                   filled: true,
-                  border: InputBorder.none,
-                  hintText: 'Search food or restaurants',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(16),
+                    borderSide: BorderSide.none,
+                  ),
+                  hintText: 'Search...',
                   hintStyle: TextStyle(
-                    fontSize: 22,
+                    fontSize: 18,
                   ),
                   prefixIcon: Icon(
                     Icons.search,
                   ),
-                  suffix: IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.clear,
-                    ),
+                  suffix: Icon(
+                    Icons.clear,
                   ),
                 ),
               ),
