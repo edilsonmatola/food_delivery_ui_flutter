@@ -110,15 +110,21 @@ class _HomeScreenState extends State<HomeScreen> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          elevation: 0,
+          backgroundColor: Colors.transparent,
           leading: IconButton(
             onPressed: () {},
             icon: Icon(
               Icons.account_circle,
+              color: Colors.black,
             ),
             iconSize: 30,
           ),
           title: Text(
             'Food Delivery',
+            style: TextStyle(
+              color: Colors.black,
+            ),
           ),
           centerTitle: true,
           actions: [
@@ -129,11 +135,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   builder: (_) => CartScreen(),
                 ),
               ),
-              child: Text(
-                'Cart (${currentUser.cart!.length})',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
+              child: Badge(
+                largeSize: 18,
+                backgroundColor: Theme.of(context).primaryColor,
+                label: Text('${currentUser.cart!.length}'),
+                child: Icon(
+                  Icons.shopping_cart,
+                  size: 30,
+                  color: Colors.black,
                 ),
               ),
             ),
