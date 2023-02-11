@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../models/food_model.dart';
 import '../../../models/restaurant_model.dart';
@@ -126,7 +127,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                         borderRadius: BorderRadius.circular(100),
                       ),
                       child: IconButton(
-                        onPressed: () => Navigator.pop(context),
+                        onPressed: Get.back,
                         icon: Icon(
                           Icons.arrow_back,
                         ),
