@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
+import '../../../routes/app_routes.dart';
 import '../../data/data.dart';
-import '../cart_screen/cart_screen.dart';
 import '../restaurant_screen/restaurant_screen.dart';
 import '../restaurant_screen/widgets/rating_stars.dart';
 import 'widgets/recent_orders.dart';
@@ -129,12 +130,7 @@ class _HomeScreenState extends State<HomeScreen> {
           centerTitle: true,
           actions: [
             TextButton(
-              onPressed: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (_) => CartScreen(),
-                ),
-              ),
+              onPressed: () => Get.toNamed(AppRoutes.cartRoute),
               child: Badge(
                 largeSize: 18,
                 backgroundColor: Theme.of(context).primaryColor,
