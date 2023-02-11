@@ -1,4 +1,5 @@
 class AppRoutes {
-  final String homeRoute = '/home';
-  final String cartRoute = '/cart';
+  static const String homeRoute = '/home';
+  static const String cartRoute = '/cart';
+  static const String restaurantRoute = '/restaurant';
 }
