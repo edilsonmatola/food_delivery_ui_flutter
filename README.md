@@ -12,9 +12,9 @@ Here are some screenshots of the app:
 
 The app provides the following features:
 
-A home screen that displays nearby restaurants and recent orders.
-A details screen that displays information about the restaunrant.
-A cart screen that displays the items the user has added to their cart and the total price.
+A **home screen** that displays nearby restaurants and recent orders.
+A **details screen** that displays information about the restaunrant.
+A **cart screen** that displays the items the user has added to their cart and the total price.
 
 ## **Installation**
 
