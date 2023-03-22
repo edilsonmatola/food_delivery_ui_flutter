@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../models/order_model.dart';
 import '../../data/data.dart';
@@ -223,7 +224,7 @@ class _CartScreenState extends State<CartScreen> {
         ),
         bottomSheet: Container(
           height: 90,
-          width: MediaQuery.of(context).size.width,
+          width: Get.size.width,
           decoration: BoxDecoration(
             color: Theme.of(context).primaryColor,
             boxShadow: [
