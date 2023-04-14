@@ -5,7 +5,6 @@ import 'package:get/get.dart';
 import '../app/presentation/cart_screen/cart_screen.dart';
 import '../app/presentation/home_screen/home_screen.dart';
 import '../app/presentation/restaurant_screen/restaurant_screen.dart';
-import 'app_routes.dart';
 
 class AppPages {
   static final appPages = [
@@ -22,4 +21,10 @@ class AppPages {
       page: () => RestaurantScreen(),
     ),
   ];
+}
+
+class AppRoutes {
+  static const homeRoute = '/home';
+  static const cartRoute = '/cart';
+  static const restaurantRoute = '/restaurant';
 }
