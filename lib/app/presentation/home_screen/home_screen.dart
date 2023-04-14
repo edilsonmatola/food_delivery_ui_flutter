@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../routes/app_routes.dart';
+import '../../../routes/app_pages.dart';
 import '../../data/data.dart';
 import '../restaurant_screen/restaurant_screen.dart';
 import '../restaurant_screen/widgets/rating_stars.dart';
