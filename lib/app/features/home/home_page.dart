@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../routes/app_routes.dart';
+import '../../../routes/app_pages.dart';
 import '../../data/data.dart';
-import '../restaurant_screen/restaurant_screen.dart';
-import '../restaurant_screen/widgets/rating_stars.dart';
+import '../restaurant/restaurant_page.dart';
+import '../restaurant/widgets/rating_stars.dart';
 import 'widgets/recent_orders.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomePageState extends State<HomePage> {
   Column _buildRestaurants() {
     final restaurantList = <Widget>[];
     for (final restaurant in restaurants) {
@@ -23,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
           onTap: () => Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (_) => RestaurantScreen(restaurant: restaurant),
+              builder: (_) => RestaurantPage(restaurant: restaurant),
             ),
           ),
           child: Container(

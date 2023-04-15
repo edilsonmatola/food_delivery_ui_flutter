@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../models/order_model.dart';
 import '../../../data/data.dart';
+import '../../../data/data_export.dart';
 
 class RecentOrders extends StatelessWidget {
   const RecentOrders({Key? key}) : super(key: key);

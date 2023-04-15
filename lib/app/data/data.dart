@@ -1,58 +1,55 @@
 import '../../core/core_export.dart';
-import '../../models/food_model.dart';
-import '../../models/order_model.dart';
-import '../../models/restaurant_model.dart';
-import 'models/user_model.dart';
+import 'models/models_export.dart';
 
 // Food
-final _burrito = FoodModel(
-    imageUrl: ImageConstant.burritoImage, name: 'Burrito', price: 8.99);
+final _burrito =
+    FoodModel(imageUrl: AppAssets.burritoImage, name: 'Burrito', price: 8.99);
 final _steak =
-    FoodModel(imageUrl: ImageConstant.steakImage, name: 'Steak', price: 17.99);
+    FoodModel(imageUrl: AppAssets.steakImage, name: 'Steak', price: 17.99);
 final _pasta =
-    FoodModel(imageUrl: ImageConstant.pastaImage, name: 'Pasta', price: 14.99);
+    FoodModel(imageUrl: AppAssets.pastaImage, name: 'Pasta', price: 14.99);
 final _ramen =
-    FoodModel(imageUrl: ImageConstant.ramenImage, name: 'Ramen', price: 13.99);
-final _pancakes = FoodModel(
-    imageUrl: ImageConstant.pancakesImage, name: 'Pancakes', price: 9.99);
-final _burger = FoodModel(
-    imageUrl: ImageConstant.burgerImage, name: 'Burger', price: 14.99);
+    FoodModel(imageUrl: AppAssets.ramenImage, name: 'Ramen', price: 13.99);
+final _pancakes =
+    FoodModel(imageUrl: AppAssets.pancakesImage, name: 'Pancakes', price: 9.99);
+final _burger =
+    FoodModel(imageUrl: AppAssets.burgerImage, name: 'Burger', price: 14.99);
 final _pizza =
-    FoodModel(imageUrl: ImageConstant.pizzaImage, name: 'Pizza', price: 11.99);
+    FoodModel(imageUrl: AppAssets.pizzaImage, name: 'Pizza', price: 11.99);
 final _salmon = FoodModel(
-    imageUrl: ImageConstant.salmonImage, name: 'Salmon Salad', price: 12.99);
+    imageUrl: AppAssets.salmonImage, name: 'Salmon Salad', price: 12.99);
 
 // Restaurants
 final _restaurant0 = RestaurantModel(
-  imageUrl: ImageConstant.restaurant0,
+  imageUrl: AppAssets.restaurant0,
   name: 'Restaurant 0',
   address: '200 Main St, New York, NY',
   rating: 5,
   menu: [_burrito, _steak, _pasta, _ramen, _pancakes, _burger, _pizza, _salmon],
 );
 final _restaurant1 = RestaurantModel(
-  imageUrl: ImageConstant.restaurant1,
+  imageUrl: AppAssets.restaurant1,
   name: 'Restaurant 1',
   address: '200 Main St, New York, NY',
   rating: 4,
   menu: [_steak, _pasta, _ramen, _pancakes, _burger, _pizza],
 );
 final _restaurant2 = RestaurantModel(
-  imageUrl: ImageConstant.restaurant2,
+  imageUrl: AppAssets.restaurant2,
   name: 'Restaurant 2',
   address: '200 Main St, New York, NY',
   rating: 4,
   menu: [_steak, _pasta, _pancakes, _burger, _pizza, _salmon],
 );
 final _restaurant3 = RestaurantModel(
-  imageUrl: ImageConstant.restaurant3,
+  imageUrl: AppAssets.restaurant3,
   name: 'Restaurant 3',
   address: '200 Main St, New York, NY',
   rating: 2,
   menu: [_burrito, _steak, _burger, _pizza, _salmon],
 );
 final _restaurant4 = RestaurantModel(
-  imageUrl: ImageConstant.restaurant4,
+  imageUrl: AppAssets.restaurant4,
   name: 'Restaurant 4',
   address: '200 Main St, New York, NY',
   rating: 3,
