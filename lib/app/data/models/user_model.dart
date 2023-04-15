@@ -1,4 +1,4 @@
-import '../../../models/order_model.dart';
+import 'models_export.dart';
 
 class UserModel {
   UserModel({
