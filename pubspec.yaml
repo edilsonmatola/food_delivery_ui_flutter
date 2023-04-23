@@ -6,7 +6,7 @@ publish_to: "none"
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=2.17.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -14,6 +14,7 @@ dependencies:
 
   cupertino_icons: ^1.0.4
   get: ^4.6.5
+  flutter_svg: ^2.0.5
 
 dev_dependencies:
   flutter_test:
@@ -26,3 +27,4 @@ flutter:
 
   assets:
     - assets/images/
+    - assets/images/walkthrough/
