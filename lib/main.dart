@@ -1,22 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_food_delivery_ui/routes/app_pages.dart';
+import 'package:get/get.dart';
 
 import 'app/features/home/home_page.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Food Delivery UI',
+    return GetMaterialApp(
+      title: 'eDAGO',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          scaffoldBackgroundColor: Colors.grey[50],
-          primaryColor: Colors.deepOrangeAccent),
-      home: HomePage(),
+        scaffoldBackgroundColor: Colors.grey[50],
+        primaryColor: Colors.deepOrangeAccent,
+      ),
+      initialRoute: AppRoutes.homeRoute,
+      getPages: AppPages.appPages,
     );
   }
 }
