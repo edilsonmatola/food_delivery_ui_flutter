@@ -2,9 +2,9 @@
 
 import 'package:get/get.dart';
 
-import '../app/features/cart/cart_page.dart';
-import '../app/features/home/home_page.dart';
-import '../app/features/restaurant/restaurant_page.dart';
+import '../app/presentation/cart_screen/cart_screen.dart';
+import '../app/presentation/home_screen/home_screen.dart';
+import '../app/presentation/restaurant_screen/restaurant_screen.dart';
 
 class AppPages {
   static final appPages = [
