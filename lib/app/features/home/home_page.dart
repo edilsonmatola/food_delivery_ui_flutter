@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../core/constants/app_sizes.dart';
 import '../../../routes/app_pages.dart';
 import '../../data/data.dart';
 import '../restaurant/restaurant_page.dart';
@@ -11,10 +12,10 @@ class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
-  _HomePageState createState() => _HomePageState();
+  HomePageState createState() => HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class HomePageState extends State<HomePage> {
   Column _buildRestaurants() {
     final restaurantList = <Widget>[];
     for (final restaurant in restaurants) {
@@ -27,7 +28,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           child: Container(
-            margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(15),
@@ -53,14 +54,14 @@ class _HomePageState extends State<HomePage> {
                 ),
                 Expanded(
                   child: Container(
-                    margin: EdgeInsets.all(12),
+                    margin: const EdgeInsets.all(12),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           restaurant.name!,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
                           ),
@@ -69,21 +70,17 @@ class _HomePageState extends State<HomePage> {
                         RatingStars(
                           rating: restaurant.rating,
                         ),
-                        SizedBox(
-                          height: 4,
-                        ),
+                        gapH4,
                         Text(
                           restaurant.address!,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w600,
                           ),
                           overflow: TextOverflow.ellipsis,
                         ),
-                        SizedBox(
-                          height: 4,
-                        ),
-                        Text(
+                        gapH4,
+                        const Text(
                           '0.2 miles away',
                           style: TextStyle(
                             fontSize: 16,
@@ -115,13 +112,13 @@ class _HomePageState extends State<HomePage> {
           backgroundColor: Colors.transparent,
           leading: IconButton(
             onPressed: () {},
-            icon: Icon(
+            icon: const Icon(
               Icons.account_circle,
               color: Colors.black,
             ),
             iconSize: 30,
           ),
-          title: Text(
+          title: const Text(
             'Food Delivery',
             style: TextStyle(
               color: Colors.black,
@@ -135,7 +132,7 @@ class _HomePageState extends State<HomePage> {
                 largeSize: 18,
                 backgroundColor: Theme.of(context).primaryColor,
                 label: Text('${currentUser.cart!.length}'),
-                child: Icon(
+                child: const Icon(
                   Icons.shopping_cart,
                   size: 30,
                   color: Colors.black,
@@ -145,11 +142,11 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
         body: ListView(
-          padding: EdgeInsets.symmetric(vertical: 10),
-          physics: BouncingScrollPhysics(),
+          padding: const EdgeInsets.symmetric(vertical: 10),
+          physics: const BouncingScrollPhysics(),
           children: [
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: TextField(
                 decoration: InputDecoration(
                   contentPadding: const EdgeInsets.all(8),
@@ -160,23 +157,23 @@ class _HomePageState extends State<HomePage> {
                     borderSide: BorderSide.none,
                   ),
                   hintText: 'Search...',
-                  hintStyle: TextStyle(
+                  hintStyle: const TextStyle(
                     fontSize: 18,
                   ),
-                  prefixIcon: Icon(
+                  prefixIcon: const Icon(
                     Icons.search,
                   ),
-                  suffix: Icon(
+                  suffix: const Icon(
                     Icons.clear,
                   ),
                 ),
               ),
             ),
-            RecentOrders(),
+            const RecentOrders(),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Padding(
+                const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 20),
                   child: Text(
                     'Nearby Restaurants',

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_food_delivery_ui/core/constants/app_sizes.dart';
 import 'package:get/get.dart';
 
 import '../../data/data_export.dart';
@@ -44,7 +45,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
                   Colors.black54.withOpacity(0.3),
                   Colors.black38.withOpacity(0.3),
                 ],
-                stops: [0.1, 0.5, 0.7, 0.6],
+                stops: const [0.1, 0.5, 0.7, 0.6],
                 begin: Alignment.topRight,
                 end: Alignment.bottomLeft,
               ),
@@ -56,7 +57,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
               children: [
                 Text(
                   menuItem.name!,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 24,
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -65,7 +66,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
                 ),
                 Text(
                   '\$${menuItem.price}',
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 18,
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -85,7 +86,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
               ),
               child: IconButton(
                 onPressed: () {},
-                icon: Icon(
+                icon: const Icon(
                   Icons.add,
                 ),
                 iconSize: 30,
@@ -127,7 +128,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
                       ),
                       child: IconButton(
                         onPressed: Get.back,
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.arrow_back,
                         ),
                         color: Colors.white,
@@ -141,7 +142,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
                       ),
                       child: IconButton(
                         onPressed: () {},
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.favorite,
                         ),
                         color: Colors.red,
@@ -153,7 +154,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
               ],
             ),
             Padding(
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -162,12 +163,12 @@ class _RestaurantPageState extends State<RestaurantPage> {
                     children: [
                       Text(
                         widget.restaurant!.name!,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
-                      Text(
+                      const Text(
                         '0.2 miles away',
                         style: TextStyle(
                           fontSize: 18,
@@ -176,12 +177,12 @@ class _RestaurantPageState extends State<RestaurantPage> {
                     ],
                   ),
                   RatingStars(rating: widget.restaurant!.rating),
-                  SizedBox(
+                  const SizedBox(
                     height: 6,
                   ),
                   Text(
                     widget.restaurant!.address!,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 18,
                     ),
                   ),
@@ -191,14 +192,20 @@ class _RestaurantPageState extends State<RestaurantPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                PrimaryButton(title: 'Reviews'),
-                PrimaryButton(title: 'Contact'),
+                PrimaryButton(
+                  title: 'Reviews',
+                  onPressed: () {},
+                ),
+                PrimaryButton(
+                  title: 'Contact',
+                  onPressed: () {},
+                ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            Center(
+            const Center(
               child: Text(
                 'Menu',
                 style: TextStyle(
@@ -208,13 +215,13 @@ class _RestaurantPageState extends State<RestaurantPage> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Expanded(
               child: GridView.count(
-                physics: BouncingScrollPhysics(),
-                padding: EdgeInsets.all(10),
+                physics: const BouncingScrollPhysics(),
+                padding: const EdgeInsets.all(10),
                 crossAxisCount: 2,
                 children:
                     List.generate(widget.restaurant!.menu!.length, (index) {
@@ -234,24 +241,26 @@ class PrimaryButton extends StatelessWidget {
   const PrimaryButton({
     Key? key,
     required this.title,
+    required this.onPressed,
   }) : super(key: key);
 
   final String title;
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: onPressed,
       style: ElevatedButton.styleFrom(
         backgroundColor: Theme.of(context).primaryColor,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(Sizes.p12),
         ),
-        padding: EdgeInsets.symmetric(horizontal: 30),
+        padding: const EdgeInsets.symmetric(horizontal: 30),
       ),
       child: Text(
         title,
-        style: TextStyle(
+        style: const TextStyle(
           color: Colors.white,
           fontSize: 20,
         ),
