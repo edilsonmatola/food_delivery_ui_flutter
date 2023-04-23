@@ -10,15 +10,15 @@ class AppPages {
   static final appPages = [
     GetPage(
       name: AppRoutes.cartRoute,
-      page: () => CartPage(),
+      page: () => const CartPage(),
     ),
     GetPage(
       name: AppRoutes.homeRoute,
-      page: () => HomePage(),
+      page: () => const HomePage(),
     ),
     GetPage(
       name: AppRoutes.restaurantRoute,
-      page: () => RestaurantPage(),
+      page: () => const RestaurantPage(),
     ),
   ];
 }
