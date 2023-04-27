@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_food_delivery_ui/core/constants/app_sizes.dart';
-import 'package:flutter_food_delivery_ui/core/constants/constants_export.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
+import '../../../core/core_export.dart';
 import '../../../routes/app_pages.dart';
-import '../restaurant/restaurant_page.dart';
+import '../../common_widgets/buttons/primary_button.dart';
 
 class WalkthroughPage3 extends StatelessWidget {
   const WalkthroughPage3({super.key});

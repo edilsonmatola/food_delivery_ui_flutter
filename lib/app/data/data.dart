@@ -1,4 +1,4 @@
-import '../../core/core_export.dart';
+import '../core/core_export.dart';
 import 'models/models_export.dart';
 
 // Food

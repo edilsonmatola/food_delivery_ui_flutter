@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../core/constants/app_sizes.dart';
+import '../../../core/core_export.dart';
+import '../../../data/data_export.dart';
 import '../../../routes/app_pages.dart';
-import '../../data/data.dart';
 import '../restaurant/restaurant_page.dart';
 import '../restaurant/widgets/rating_stars.dart';
 import 'widgets/recent_orders.dart';

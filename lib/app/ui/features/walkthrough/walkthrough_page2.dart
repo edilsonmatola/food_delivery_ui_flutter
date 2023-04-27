@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
-import '../../../core/constants/app_sizes.dart';
 import '../../../core/core_export.dart';
 import '../../../routes/app_pages.dart';
+import '../../common_widgets/buttons/primary_button.dart';
 import '../restaurant/restaurant_page.dart';
 
 class WalkthroughPage2 extends StatelessWidget {

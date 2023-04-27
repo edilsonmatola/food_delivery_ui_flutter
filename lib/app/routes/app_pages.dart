@@ -1,13 +1,13 @@
 // ignore_for_file: avoid_classes_with_only_static_members
 
-import 'package:flutter_food_delivery_ui/app/features/walkthrough/walkthrough_page1.dart';
-import 'package:flutter_food_delivery_ui/app/features/walkthrough/walkthrough_page2.dart';
-import 'package:flutter_food_delivery_ui/app/features/walkthrough/walkthrough_page3.dart';
+import 'package:flutter_food_delivery_ui/app/ui/features/walkthrough/walkthrough_page1.dart';
+import 'package:flutter_food_delivery_ui/app/ui/features/walkthrough/walkthrough_page2.dart';
+import 'package:flutter_food_delivery_ui/app/ui/features/walkthrough/walkthrough_page3.dart';
 import 'package:get/get.dart';
 
-import '../app/features/cart/cart_page.dart';
-import '../app/features/home/home_page.dart';
-import '../app/features/restaurant/restaurant_page.dart';
+import '../ui/features/cart/cart_page.dart';
+import '../ui/features/home/home_page.dart';
+import '../ui/features/restaurant/restaurant_page.dart';
 
 class AppPages {
   static final appPages = [

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_food_delivery_ui/core/constants/app_sizes.dart';
 import 'package:get/get.dart';
 
-import '../../data/data_export.dart';
+import '../../../data/data_export.dart';
+import '../../common_widgets/buttons/primary_button.dart';
 import 'widgets/rating_stars.dart';
 
 class RestaurantPage extends StatefulWidget {
@@ -231,38 +231,6 @@ class _RestaurantPageState extends State<RestaurantPage> {
               ),
             )
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class PrimaryButton extends StatelessWidget {
-  const PrimaryButton({
-    Key? key,
-    required this.title,
-    required this.onPressed,
-  }) : super(key: key);
-
-  final String title;
-  final VoidCallback onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: onPressed,
-      style: ElevatedButton.styleFrom(
-        backgroundColor: Theme.of(context).primaryColor,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(Sizes.p12),
-        ),
-        padding: const EdgeInsets.symmetric(horizontal: 30),
-      ),
-      child: Text(
-        title,
-        style: const TextStyle(
-          color: Colors.white,
-          fontSize: 20,
         ),
       ),
     );
