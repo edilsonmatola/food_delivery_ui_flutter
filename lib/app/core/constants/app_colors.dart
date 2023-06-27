@@ -5,6 +5,7 @@ class AppColors {
   static final secondaryColor = fromHex('#22A45');
   static final neutralBlack = fromHex('#010F07');
   static final neutralGrey = fromHex('#868686');
+  static final white = fromHex('#ffffff');
 
   static Color fromHex(String hexString) {
     final buffer = StringBuffer();
