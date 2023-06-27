@@ -1,5 +1,4 @@
-// ignore_for_file: avoid_classes_with_only_static_members
-
+import 'package:flutter/material.dart';
 import 'package:flutter_food_delivery_ui/app/ui/features/walkthrough/walkthrough_page1.dart';
 import 'package:flutter_food_delivery_ui/app/ui/features/walkthrough/walkthrough_page2.dart';
 import 'package:flutter_food_delivery_ui/app/ui/features/walkthrough/walkthrough_page3.dart';
@@ -11,9 +10,34 @@ import '../ui/features/restaurant/restaurant_page.dart';
 
 class AppPages {
   static final appPages = [
+    // Walkthroughs
+    GetPage(
+      name: AppRoutes.walkthrough1Route,
+      page: () => const WalkthroughPage1(),
+      curve: Curves.easeOut,
+      transitionDuration: const Duration(milliseconds: 300),
+      transition: Transition.fadeIn,
+    ),
+    GetPage(
+      name: AppRoutes.walkthrough2Route,
+      page: () => const WalkthroughPage2(),
+      curve: Curves.easeOut,
+      transitionDuration: const Duration(milliseconds: 300),
+      transition: Transition.fadeIn,
+    ),
+    GetPage(
+      name: AppRoutes.walkthrough3Route,
+      page: () => const WalkthroughPage3(),
+      curve: Curves.easeOut,
+      transitionDuration: const Duration(milliseconds: 300),
+      transition: Transition.fadeIn,
+    ),
     GetPage(
       name: AppRoutes.cartRoute,
       page: () => const CartPage(),
+      curve: Curves.easeOut,
+      transitionDuration: const Duration(milliseconds: 300),
+      transition: Transition.fadeIn,
     ),
     GetPage(
       name: AppRoutes.homeRoute,
@@ -22,18 +46,6 @@ class AppPages {
     GetPage(
       name: AppRoutes.restaurantRoute,
       page: () => const RestaurantPage(),
-    ),
-    GetPage(
-      name: AppRoutes.walkthrough1Route,
-      page: () => const WalkthroughPage1(),
-    ),
-    GetPage(
-      name: AppRoutes.walkthrough2Route,
-      page: () => const WalkthroughPage2(),
-    ),
-    GetPage(
-      name: AppRoutes.walkthrough3Route,
-      page: () => const WalkthroughPage3(),
     ),
   ];
 }
