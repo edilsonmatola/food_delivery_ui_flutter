@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_food_delivery_ui/app/ui/features/auth/view/sign_in/sign_in_page.dart';
 import 'package:flutter_food_delivery_ui/app/ui/features/walkthrough/walkthrough_page1.dart';
 import 'package:flutter_food_delivery_ui/app/ui/features/walkthrough/walkthrough_page2.dart';
 import 'package:flutter_food_delivery_ui/app/ui/features/walkthrough/walkthrough_page3.dart';
@@ -32,6 +33,14 @@ class AppPages {
       transitionDuration: const Duration(milliseconds: 300),
       transition: Transition.fadeIn,
     ),
+    // Auth
+    GetPage(
+      name: AppRoutes.signInRoute,
+      page: () => const SignInPage(),
+      curve: Curves.easeOut,
+      transitionDuration: const Duration(milliseconds: 300),
+      transition: Transition.fadeIn,
+    ),
     GetPage(
       name: AppRoutes.cartRoute,
       page: () => const CartPage(),
@@ -57,4 +66,5 @@ class AppRoutes {
   static const walkthrough1Route = '/walkthrough1';
   static const walkthrough2Route = '/walkthrough2';
   static const walkthrough3Route = '/walkthrough3';
+  static const signInRoute = '/signIn';
 }
