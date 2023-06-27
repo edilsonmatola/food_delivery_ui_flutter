@@ -51,7 +51,7 @@ class WalkthroughPage1 extends StatelessWidget {
                 ),
                 child: PrimaryButton(
                   title: 'NEXT',
-                  onPressed: () => Get.toNamed(AppRoutes.walkthrough2Route),
+                  onPressed: () => Get.offNamed(AppRoutes.walkthrough2Route),
                 ),
               ),
             ],
