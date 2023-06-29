@@ -27,7 +27,8 @@ class SignInPage extends StatelessWidget {
             horizontal: Sizes.p20,
           ),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               const Text(
                 'Welcome to',
@@ -42,10 +43,12 @@ class SignInPage extends StatelessWidget {
               ),
               gapH32,
               const CustomFormField(
+                label: 'Email',
                 hintText: 'Email',
               ),
-              gapH16,
+              gapH32,
               const CustomFormField(
+                label: 'Password',
                 hintText: 'Password',
               ),
               gapH20,
