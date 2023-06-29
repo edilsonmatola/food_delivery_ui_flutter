@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_food_delivery_ui/app/ui/common_widgets/buttons/primary_button.dart';
+import 'package:flutter_food_delivery_ui/app/ui/common_widgets/forms/custom_form_field.dart';
 
 import '../../../../../core/core_export.dart';
 
@@ -22,19 +23,31 @@ class SignInPage extends StatelessWidget {
           ),
         ),
         body: SingleChildScrollView(
+          padding: const EdgeInsets.symmetric(
+            horizontal: Sizes.p20,
+          ),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
                 'Welcome to',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 34,
+                ),
               ),
               gapH20,
               const Text(
                 'Enter your Phone number or Email for sign in, or Create new account.',
               ),
               gapH32,
-              TextFormField(),
+              const CustomFormField(
+                hintText: 'Email',
+              ),
               gapH16,
-              TextFormField(),
+              const CustomFormField(
+                hintText: 'Password',
+              ),
               gapH20,
               TextButton(
                 onPressed: () {},
