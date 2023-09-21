@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../data/data.dart';
 import '../../../data/data_export.dart';
 
 class CartPage extends StatefulWidget {
   const CartPage({Key? key}) : super(key: key);
 
   @override
-  _CartPageState createState() => _CartPageState();
+  CartPageState createState() => CartPageState();
 }
 
-class _CartPageState extends State<CartPage> {
+class CartPageState extends State<CartPage> {
   Container _buildCartItem(OrderModel order) {
     return Container(
-      padding: EdgeInsets.all(20),
+      padding: const EdgeInsets.all(20),
       height: 170,
       child: Row(
         children: [
@@ -35,31 +34,31 @@ class _CartPageState extends State<CartPage> {
                 ),
                 Expanded(
                   child: Container(
-                    margin: EdgeInsets.all(12),
+                    margin: const EdgeInsets.all(12),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           order.food!.name!,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
                           ),
                           overflow: TextOverflow.ellipsis,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         Text(
                           order.restaurant!.name!,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w600,
                           ),
                           overflow: TextOverflow.ellipsis,
                         ),
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
                         Container(
                           width: 100,
                           decoration: BoxDecoration(
@@ -83,17 +82,17 @@ class _CartPageState extends State<CartPage> {
                                   ),
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 20,
                               ),
                               Text(
                                 order.quantity.toString(),
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 20,
                               ),
                               GestureDetector(
@@ -118,10 +117,10 @@ class _CartPageState extends State<CartPage> {
             ),
           ),
           Container(
-            margin: EdgeInsets.all(10),
+            margin: const EdgeInsets.all(10),
             child: Text(
               '\$${order.quantity! * order.food!.price!}',
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w600,
               ),
@@ -147,7 +146,7 @@ class _CartPageState extends State<CartPage> {
               ),
           elevation: 0,
           backgroundColor: Colors.transparent,
-          title: Text(
+          title: const Text(
             'Cart',
             style: TextStyle(
               color: Colors.black,
@@ -156,17 +155,17 @@ class _CartPageState extends State<CartPage> {
           centerTitle: true,
         ),
         body: ListView.separated(
-          physics: BouncingScrollPhysics(),
+          physics: const BouncingScrollPhysics(),
           itemBuilder: (BuildContext context, int index) {
             if (index < currentUser.cart!.length) {
               final order = currentUser.cart![index];
               return _buildCartItem(order);
             }
             return Padding(
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               child: Column(
                 children: [
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
@@ -185,11 +184,11 @@ class _CartPageState extends State<CartPage> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
+                      const Text(
                         'Total Cost',
                         style: TextStyle(
                           color: Colors.black,
@@ -207,7 +206,7 @@ class _CartPageState extends State<CartPage> {
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 80,
                   ),
                 ],
@@ -215,7 +214,7 @@ class _CartPageState extends State<CartPage> {
             );
           },
           separatorBuilder: (BuildContext context, int index) {
-            return Divider(
+            return const Divider(
               height: 1,
               color: Colors.grey,
             );
@@ -227,7 +226,7 @@ class _CartPageState extends State<CartPage> {
           width: Get.size.width,
           decoration: BoxDecoration(
             color: Theme.of(context).primaryColor,
-            boxShadow: [
+            boxShadow: const [
               BoxShadow(
                 color: Colors.black26,
                 offset: Offset(0, -1),
@@ -241,7 +240,7 @@ class _CartPageState extends State<CartPage> {
               style: ElevatedButton.styleFrom(
                 backgroundColor: Theme.of(context).primaryColor,
               ),
-              child: Text(
+              child: const Text(
                 'CHECKOUT',
                 style: TextStyle(
                   color: Colors.white,
