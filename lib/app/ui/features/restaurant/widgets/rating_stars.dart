@@ -12,7 +12,7 @@ class RatingStars extends StatelessWidget {
     }
     return Text(
       stars.toString(),
-      style: TextStyle(
+      style: const TextStyle(
         fontSize: 18,
       ),
     );

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../../data/data.dart';
 import '../../../../data/data_export.dart';
 
 class RecentOrders extends StatelessWidget {
@@ -11,7 +10,7 @@ class RecentOrders extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
+        const Padding(
           padding: EdgeInsets.symmetric(horizontal: 20),
           child: Text(
             'Recent Orders',
@@ -22,11 +21,11 @@ class RecentOrders extends StatelessWidget {
             ),
           ),
         ),
-        Container(
+        SizedBox(
           height: 120,
           child: ListView.builder(
-            physics: BouncingScrollPhysics(),
-            padding: EdgeInsets.only(left: 10),
+            physics: const BouncingScrollPhysics(),
+            padding: const EdgeInsets.only(left: 10),
             scrollDirection: Axis.horizontal,
             itemCount: currentUser.orders!.length,
             itemBuilder: (BuildContext context, int index) {
@@ -51,7 +50,7 @@ class _RecentOrderCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
       width: 320,
       decoration: BoxDecoration(
         boxShadow: [
@@ -87,36 +86,36 @@ class _RecentOrderCard extends StatelessWidget {
                 ),
                 Expanded(
                   child: Container(
-                    margin: EdgeInsets.all(12),
+                    margin: const EdgeInsets.all(12),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           order.food!.name!,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
                           ),
                           overflow: TextOverflow.ellipsis,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 8,
                         ),
                         Text(
                           order.restaurant!.name!,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w600,
                           ),
                           overflow: TextOverflow.ellipsis,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 4,
                         ),
                         Text(
                           order.dateTime!,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w600,
                           ),
@@ -130,7 +129,7 @@ class _RecentOrderCard extends StatelessWidget {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(right: 20),
+            margin: const EdgeInsets.only(right: 20),
             width: 48,
             decoration: BoxDecoration(
               color: Theme.of(context).primaryColor,
@@ -138,7 +137,7 @@ class _RecentOrderCard extends StatelessWidget {
             ),
             child: IconButton(
               onPressed: () {},
-              icon: Icon(
+              icon: const Icon(
                 Icons.add,
               ),
               iconSize: 30,
